@@ -9,12 +9,42 @@
   <script>
     //Write a function to reverse a string
       function(){
-        var str = "Argument to be reversed";
+        var str = "Argument goes here";
         var reverse = str.split("").reverse("").join("");
         return console.log(reverse);
       };
 
-    //
+
+
+    //Replace every letter in the string with the following letter in the alphabet and capitalize vowels (a,e,i,o, and u)
+      function LetterChanges(str) {
+        var alphabet = "abcdefghijklmnopqrstuvwxyza", //set variable for entire alphabet
+            vowels = "aiueo", //set variable for vowels
+            newstr = ''; //appending answer to new string (newstr)
+            for (var i = 0; i < str.length; i++) { //loop to address each character in string
+              if (alphabet.indexOf(str[i]) != -1) { 
+                  newstr += alphabet[alphabet.indexOf(str[i]) + 1];
+              } else {
+                  newstr += str[i];
+              }  
+            }
+            newstr = newstr.replace(
+              /[aeiou]/g,           // replace all vowels
+              function(letter) {    // called for each match
+                return letter.toUpperCase();
+              }
+            );
+        return newstr;
+      } 
+
+
+    //Find the Factorial of a number
+      var num = 5
+      for (i=5; i>0; --i) {
+        num*=i;
+      };
+
+
   </script>
 </body>
 </html>
